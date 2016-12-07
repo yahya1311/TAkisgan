@@ -1,0 +1,9 @@
+J48
+Cross-val 10: 82.6667%
+Cross-val 5: 82%
+Percentage Split 80: 80%
+
+MultilayerPerceptron
+Cross-val 10: 74.6%
+Cross-val 5: 76.6%
+Percentage Split 80: 86.6%
