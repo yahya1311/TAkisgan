@@ -116,7 +116,6 @@ namespace KinectHandTracking
                             if (body.IsTracked)
                             {
                                 // Identifikasi Tulang
-
                                 //Joint shoulderRight = body.Joints[JointType.ShoulderRight];
                                 Joint handRight = body.Joints[JointType.HandRight];
                                 //Joint thumbRight = body.Joints[JointType.ThumbRight];
@@ -249,7 +248,8 @@ namespace KinectHandTracking
                                         else if (alpha1 > 179) { kuant1[i] = 5; }
                                         else if (alpha1 > 134) { kuant1[i] = 4; }
                                         else if (alpha1 > 89) { kuant1[i] = 3; }
-                                        else if (alpha1 > 44) { kuant1[i] = 2; } else { kuant1[i] = 1; }
+                                        else if (alpha1 > 44) { kuant1[i] = 2; }
+                                        else { kuant1[i] = 1; }
 
                                         //tangan kanan
                                         if (alpha2 > 314) { kuant2[i] = 8; }
