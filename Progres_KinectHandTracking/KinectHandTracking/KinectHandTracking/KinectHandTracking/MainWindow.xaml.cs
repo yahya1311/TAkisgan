@@ -210,7 +210,7 @@ namespace KinectHandTracking
 
                                 if (i < 40)
                                 {
-                                    if (i != 39)
+                                    if (i < 38)
                                     {
                                         ambilData.Text = (i + 1).ToString();
                                     }
