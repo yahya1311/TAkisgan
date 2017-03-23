@@ -210,6 +210,13 @@ namespace KinectHandTracking
 
                                 if (i < 40)
                                 {
+                                    if (i != 39)
+                                    {
+                                        ambilData.Text = (i + 1).ToString();
+                                    }
+                                    else ambilData.Text = "Done";
+                                    
+
                                     if (i == 1)
                                     {
                                         leher = (neck.Position.Y);
