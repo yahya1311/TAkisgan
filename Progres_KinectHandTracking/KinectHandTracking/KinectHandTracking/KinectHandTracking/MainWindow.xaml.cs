@@ -43,7 +43,7 @@ namespace KinectHandTracking
         //Penanda
         private int flag = 0, flag2 = 0;
         private int i = 0;
-        private int statusAmbil = 0;
+        private int statusAmbil = 1;
 
         #endregion
 
@@ -109,7 +109,7 @@ namespace KinectHandTracking
 
                     // Deklarasi Variabel untuk Write Data
                     var csv = new StringBuilder();
-                    string filePath = "F:\\Eka\\ITS\\KULIAH\\SEMESTER 7\\TAkisgan\\Realtime\\DataSet 2\\Percobaan.csv";
+                    string filePath = "F:\\Eka\\ITS\\KULIAH\\SEMESTER 7\\TAkisgan\\Realtime\\DataSet Baru\\Percobaan.csv";
 
 
                     foreach (var body in _bodies)
