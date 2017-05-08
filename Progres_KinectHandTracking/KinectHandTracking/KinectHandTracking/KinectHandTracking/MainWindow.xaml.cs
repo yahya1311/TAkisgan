@@ -43,7 +43,7 @@ namespace KinectHandTracking
         //Penanda
         private int flag = 0, flag2 = 0;
         private int i = 0;
-        private int statusAmbil = 1;
+        private int statusAmbil = 0;
 
         #endregion
 
@@ -89,6 +89,7 @@ namespace KinectHandTracking
         {
             var reference = e.FrameReference.AcquireFrame();
 
+            #region Acquire Frame Color
             // Color
             using (var frame = reference.ColorFrameReference.AcquireFrame())
             {
@@ -97,6 +98,7 @@ namespace KinectHandTracking
                     camera.Source = frame.ToBitmap();
                 }
             }
+            #endregion
 
             // Body
             using (var frame = reference.BodyFrameReference.AcquireFrame())
@@ -124,6 +126,7 @@ namespace KinectHandTracking
                                     flag2 = 1;
                                 }
 
+                                #region Menggambar Interface Output Kinect
                                 // Identifikasi Tulang
                                 //Joint shoulderRight = body.Joints[JointType.ShoulderRight];
                                 Joint handRight = body.Joints[JointType.HandRight];
@@ -136,6 +139,7 @@ namespace KinectHandTracking
 
                                 // Menggambar Skeleton
                                 canvas.DrawSkeleton(body, _sensor.CoordinateMapper);
+                                #endregion
 
                                 #region Notif State
 
@@ -185,8 +189,8 @@ namespace KinectHandTracking
                                         break;
                                 }
 
-                                tblRightHandState.Text = rightHandState;
-                                tblLeftHandState.Text = leftHandState;
+                                tblRightHandState.Content = rightHandState;
+                                tblLeftHandState.Content = leftHandState;
                                 #endregion
 
                                 #region Untuk Membuat Dataset Baru
@@ -194,7 +198,6 @@ namespace KinectHandTracking
                                 a = (handLeft.Position.X); b = (handLeft.Position.Y);
                                 x = (handRight.Position.X); y = (handRight.Position.Y);
 
-                                // Frame Pertama
                                 if (flag == 0)
                                 {
                                     deltaa = a; deltab = b;
@@ -211,19 +214,23 @@ namespace KinectHandTracking
 
                                 if (i < 40)
                                 {
+                                    #region Status Frame
                                     if (i < 38)
                                     {
-                                        ambilData.Text = (i + 1).ToString();
+                                        ambilData.Content = (i + 1).ToString();
                                     }
-                                    else ambilData.Text = "Done";
-                                    
+                                    else ambilData.Content = "Done";
+                                    #endregion
 
+                                    #region Identifikasi Posisi
                                     if (i == 1)
                                     {
                                         leher = (neck.Position.Y);
                                         tengah = (spineMid.Position.Y);
                                     }
+                                    #endregion
 
+                                    #region Frame Tengah untuk Posisi
                                     if (i == 20)
                                     {
                                         //b handleft tanganKiri //y handright tanganKanan
@@ -235,8 +242,9 @@ namespace KinectHandTracking
                                         else if (y < tengah) tanganKanan = "Perut";
                                         else tanganKanan = "Dada";
                                     }
+                                    #endregion
 
-                                    //ekstraksi fitur dinamis
+                                    #region Ekstraksi Fitur Sinamis
                                     //tangan kiri
                                     if (deltaa >= 0 && deltab >= 0)
                                     {
@@ -252,8 +260,9 @@ namespace KinectHandTracking
                                     if (deltax >= 0 && deltay >= 0) { alpha2 = (Math.Atan(deltay / deltax)) * (180 / Math.PI); }
                                     else if (deltax < 0) { alpha2 = (Math.Atan(deltay / deltax)) * (180 / Math.PI) + 180; }
                                     else { alpha2 = (Math.Atan(deltay / deltax)) * (180 / Math.PI) + 360; }
+                                    #endregion
 
-                                    //fitur dinamisnya
+                                    #region Fitur Dinamisnya
                                     //tangan kiri
                                     if (alpha1 > 314) { kuant1[i] = 8; }
                                     else if (alpha1 > 269) { kuant1[i] = 7; }
@@ -273,7 +282,9 @@ namespace KinectHandTracking
                                     else if (alpha2 > 89) { kuant2[i] = 3; }
                                     else if (alpha2 > 44) { kuant2[i] = 2; }
                                     else { kuant2[i] = 1; }
+                                    #endregion
 
+                                    #region Write Data
                                     if (i == 38)
                                     {
                                         var stringkuant4 = kuant1[4].ToString(); var stringkuant6 = kuant1[6].ToString(); var stringkuant8 = kuant1[8].ToString();
@@ -291,6 +302,7 @@ namespace KinectHandTracking
                                         var stringkuant73 = kuant2[34].ToString(); var stringkuant75 = kuant2[36].ToString(); var stringkuant77 = kuant2[38].ToString();
                                         var stringtangankiri = tanganKiri; var stringtangankanan = tanganKanan;
 
+                                        #region Training / Testing
                                         if (statusAmbil != 0)
                                         { 
                                             var newLine = string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},{24},{25},{26},{27},{28},{29},{30},{31},{32},{33},{34},{35},{36},{37}",
@@ -311,27 +323,27 @@ namespace KinectHandTracking
                                                 if (stringtangankanan == "Kepala") {
                                                     if (kuant2[34] <= 3) {
                                                         if (kuant2[22] <= 4) {
-                                                            hasilKlasifikasi.Text = "Maklum";
+                                                            outputText.Content = "Maklum";
                                                         }
                                                         else {
                                                             if (kuant2[14] <= 7) {
-                                                                hasilKlasifikasi.Text = "Bingung";
+                                                                outputText.Content = "Bingung";
                                                             }
                                                             else {
-                                                                hasilKlasifikasi.Text = "Awan";
+                                                                outputText.Content = "Awan";
                                                             }
                                                         }
                                                     }
                                                     else {
                                                         if (kuant2[34] <= 6) {
-                                                            hasilKlasifikasi.Text = "Topeng";
+                                                            outputText.Content = "Topeng";
                                                         }
                                                         else {
                                                             if (kuant2[18] <= 3) {
-                                                                hasilKlasifikasi.Text = "Maklum";
+                                                                outputText.Content = "Maklum";
                                                             }
                                                             else {
-                                                                hasilKlasifikasi.Text = "Awan";
+                                                                outputText.Content = "Awan";
                                                             }
                                                         }
                                                     }
@@ -339,38 +351,40 @@ namespace KinectHandTracking
                                                 } else if (stringtangankanan == "Perut") {
                                                     if (kuant1[34] <= 6) {
                                                         if(kuant2[14] <= 5) {
-                                                            hasilKlasifikasi.Text = "Besar";
+                                                            outputText.Content = "Besar";
                                                         }
                                                         else {
-                                                            hasilKlasifikasi.Text = "Badan";
+                                                            outputText.Content = "Badan";
                                                         }
                                                     }
                                                     else {
                                                         if(kuant1[18] <= 6) {
                                                             if(kuant2[34] <= 6) {
-                                                                hasilKlasifikasi.Text = "Bola";
+                                                                outputText.Content = "Bola";
                                                             }
                                                             else {
-                                                                hasilKlasifikasi.Text = "Badan";
+                                                                outputText.Content = "Badan";
                                                             }
                                                         }
                                                         else {
-                                                            hasilKlasifikasi.Text = "Anak";
+                                                            outputText.Content = "Anak";
                                                         }
                                                     }
                                                 } else {
-                                                    hasilKlasifikasi.Text = "Topeng";
+                                                    outputText.Content = "Topeng";
                                                 }
                                             }
                                             else if (kuant1[10] <= 6) {
-                                                    hasilKlasifikasi.Text = "Bingkai";
+                                                    outputText.Content = "Bingkai";
                                             }
                                             else {
-                                                hasilKlasifikasi.Text = "Rujuk";
+                                                outputText.Content = "Rujuk";
                                             }
                                         }
+                                        #endregion
                                     }
                                     i++;
+                                    #endregion
                                 }
                                 #endregion
                             }
@@ -383,7 +397,16 @@ namespace KinectHandTracking
                 }
             }
         }
-
         #endregion
+
+        private void OneTestButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createButton_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
