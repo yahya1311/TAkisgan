@@ -1,5 +1,5 @@
 J48
-Cross-val 10: 92.6667%
+##Cross-val 10: 92.6667%
 Cross-val 5: 84%
 Percentage Split 80: 83.333%
 
@@ -10,7 +10,7 @@ Percentage Split 80: 80%
 
 --TAMBAH DATA--
 J48
-Cross-val 10: 78.8%
+##Cross-val 10: 78.8%
 Cross-val 5: 78.8%
 Percentage Split 80: 68.5%
 

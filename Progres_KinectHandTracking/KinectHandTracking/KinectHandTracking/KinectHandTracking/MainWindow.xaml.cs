@@ -318,67 +318,290 @@ namespace KinectHandTracking
                                         }
                                         else
                                         {
-
-                                            if (stringtangankiri == "Perut") {
-                                                if (stringtangankanan == "Kepala") {
-                                                    if (kuant2[34] <= 3) {
-                                                        if (kuant2[22] <= 4) {
-                                                            outputText.Content = "Maklum";
-                                                        }
-                                                        else {
-                                                            if (kuant2[14] <= 7) {
-                                                                outputText.Content = "Bingung";
-                                                            }
-                                                            else {
-                                                                outputText.Content = "Awan";
-                                                            }
-                                                        }
-                                                    }
-                                                    else {
-                                                        if (kuant2[34] <= 6) {
-                                                            outputText.Content = "Topeng";
-                                                        }
-                                                        else {
-                                                            if (kuant2[18] <= 3) {
+                                            int kondisi = 2;
+                                            if (kondisi == 1)
+                                            {
+                                                #region Data Sedikit
+                                                if (stringtangankiri == "Perut")
+                                                {
+                                                    if (stringtangankanan == "Kepala")
+                                                    {
+                                                        if (kuant2[34] <= 3)
+                                                        {
+                                                            if (kuant2[22] <= 4)
+                                                            {
                                                                 outputText.Content = "Maklum";
                                                             }
-                                                            else {
-                                                                outputText.Content = "Awan";
+                                                            else
+                                                            {
+                                                                if (kuant2[14] <= 7)
+                                                                {
+                                                                    outputText.Content = "Bingung";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Awan";
+                                                                }
                                                             }
                                                         }
-                                                    }
+                                                        else
+                                                        {
+                                                            if (kuant2[34] <= 6)
+                                                            {
+                                                                outputText.Content = "Topeng";
+                                                            }
+                                                            else
+                                                            {
+                                                                if (kuant2[18] <= 3)
+                                                                {
+                                                                    outputText.Content = "Maklum";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Awan";
+                                                                }
+                                                            }
+                                                        }
 
-                                                } else if (stringtangankanan == "Perut") {
-                                                    if (kuant1[34] <= 6) {
-                                                        if(kuant2[14] <= 5) {
-                                                            outputText.Content = "Besar";
-                                                        }
-                                                        else {
-                                                            outputText.Content = "Badan";
-                                                        }
                                                     }
-                                                    else {
-                                                        if(kuant1[18] <= 6) {
-                                                            if(kuant2[34] <= 6) {
-                                                                outputText.Content = "Bola";
+                                                    else if (stringtangankanan == "Perut")
+                                                    {
+                                                        if (kuant1[34] <= 6)
+                                                        {
+                                                            if (kuant2[14] <= 5)
+                                                            {
+                                                                outputText.Content = "Besar";
                                                             }
-                                                            else {
+                                                            else
+                                                            {
                                                                 outputText.Content = "Badan";
                                                             }
                                                         }
-                                                        else {
-                                                            outputText.Content = "Anak";
+                                                        else
+                                                        {
+                                                            if (kuant1[18] <= 6)
+                                                            {
+                                                                if (kuant2[34] <= 6)
+                                                                {
+                                                                    outputText.Content = "Bola";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Badan";
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                outputText.Content = "Anak";
+                                                            }
                                                         }
                                                     }
-                                                } else {
-                                                    outputText.Content = "Topeng";
+                                                    else
+                                                    {
+                                                        outputText.Content = "Topeng";
+                                                    }
                                                 }
-                                            }
-                                            else if (kuant1[10] <= 6) {
+                                                else if (kuant1[10] <= 6)
+                                                {
                                                     outputText.Content = "Bingkai";
+                                                }
+                                                else
+                                                {
+                                                    outputText.Content = "Rujuk";
+                                                }
+                                                #endregion
                                             }
-                                            else {
-                                                outputText.Content = "Rujuk";
+                                            else
+                                            {
+                                                #region Data Banyak
+                                                if (stringtangankiri == "Perut")
+                                                {
+                                                    if(stringtangankanan == "Kepala")
+                                                    {
+                                                        if (kuant2[34] <= 3)
+                                                        {
+                                                            if (kuant2[22] <= 4)
+                                                            {
+                                                                outputText.Content = "Maklum";
+                                                            }
+                                                            else
+                                                            {
+                                                                if (kuant2[14] <= 7)
+                                                                {
+                                                                    outputText.Content = "Bingung";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Awan";
+                                                                }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if (kuant2[34] <= 6)
+                                                            {
+                                                                outputText.Content = "Topeng";
+                                                            }
+                                                            else
+                                                            {
+                                                                if (kuant2[18] <= 3)
+                                                                {
+                                                                    outputText.Content = "Maklum";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Awan";
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    else if(stringtangankanan == "Perut")
+                                                    {
+                                                        if (kuant1[14] <= 6)
+                                                        {
+                                                            if (kuant1[34] <= 6)
+                                                            {
+                                                                if (kuant1[16] <= 6)
+                                                                {
+                                                                    outputText.Content = "Besar";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Badan";
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                outputText.Content = "Bola";
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if (kuant1[34] <= 6)
+                                                            {
+                                                                if(kuant2[14] <= 5)
+                                                                {
+                                                                    outputText.Content = "Sempit";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Badan";
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                if (kuant2[28] <= 6)
+                                                                {
+                                                                    if (kuant2[28] <= 2)
+                                                                    {
+                                                                        outputText.Content = "Samping";
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (kuant2[30] <= 5)
+                                                                        {
+                                                                            if (kuant1[26] <= 6)
+                                                                            {
+                                                                                outputText.Content = "Sempit";
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                outputText.Content = "Sama";
+                                                                            }
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            outputText.Content = "Sempit";
+                                                                        }
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    if(kuant2[10] <= 6)
+                                                                    {
+                                                                        if(kuant2[34] <= 4)
+                                                                        {
+                                                                            outputText.Content = "Samping";
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            outputText.Content = "Anak";
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        outputText.Content = "Samping";
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (kuant2[16] <= 3)
+                                                        {
+                                                            if (kuant2[30] <= 4)
+                                                            {
+                                                                outputText.Content = "Lengkung";
+                                                            }
+                                                            else
+                                                            {
+                                                                outputText.Content = "Gelombang";
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if (kuant2[18] <= 6)
+                                                            {
+                                                                outputText.Content = "Faedah";
+                                                            }
+                                                            else
+                                                            {
+                                                                if (kuant2[16] <= 5)
+                                                                {
+                                                                    outputText.Content = "Faedah";
+                                                                }
+                                                                else
+                                                                {
+                                                                    outputText.Content = "Gelombang";
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+
+
+                                                }
+                                                else if (stringtangankiri == "Dada")
+                                                {
+                                                    if (kuant1[22] <= 6 )
+                                                    {
+                                                        outputText.Content = "Bingkai";
+                                                    }
+                                                    else
+                                                    {
+                                                        outputText.Content = "Rujuk";
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if (kuant2[36] <= 7)
+                                                    {
+                                                        if (kuant2[36] <= 3)
+                                                        {
+                                                            outputText.Content = "Kijang";
+                                                        }
+                                                        else
+                                                        {
+                                                            outputText.Content = "Selubung";
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        outputText.Content = "Kijang";
+                                                    }
+                                                }
+                                                #endregion
                                             }
                                         }
                                         #endregion
