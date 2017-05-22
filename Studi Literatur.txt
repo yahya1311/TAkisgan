@@ -1,0 +1,22 @@
+[1] Erdefi Rakun, Mirna Andriani, I Wayan Wiprayoga, Ken Danniswara, Andros Tjandra. 2013. "Combining depth image and skeleton data from Kinect for recognizing words in the sign system for Indonesian language (SIBI [Sistem Isyarat Bahasa Indonesia])." Advanced Computer Science and Information Systems (ICACSIS), 2013 International Conference on. Bali: IEEE. 387-392.
+
+[2] Nehemia Sugianto, Febriliyan Samopa. 2015. "Analisa Manfaat dan Penerimaan Terhadap Implementasi Bahasa Isyarat Indonesia pada Latar Belakang Komplek Menggunakan Kinect dan Jaringan Syaraf Tiruan (Studi Kasus SLB Karya Mulia 1)." JUISI, Vol 1, No 1. Surabaya. 56-72.
+
+[3] TA Mas Didit
+
+[4] Andreas W. Yanuardi, Samudra Prasetio, Purnama P. Johannes Adi. 2010. "Indonesian Sign Language Computer Application for the Deaf." 2010 2nd International Conference on Education Technology and Computer (Volume:2 ). Shanghai: IEEE. V2-89 - V2-92.
+
+[5] "Pengenalan Bahasa Isyarat Indonesia Berbasis Sensor Flex dan Accelerometer Menggunakan Dynamic Time Warping." [Online]. Tersedia: http://digilib.its.ac.id/public/ITS-Master-18061-2209205024-Presentation.pdf [Diakses 7 Juni 2016]
+
+[6] Niahasjim. (2013, Juli 15). Gambar Sistem Isyarat Bahasa Indonesia (SIBI) – Kata Ganti Orang. Diambil kembali dari LokerNia: https://lokernia.wordpress.com/tag/sistemisyarat-bahasa-indonesia/.
+
+[7] Gambar Kinect
+[8] Kinect SDK
+
+[9] Derrick H. Nguyen, Bernard Widrow. 1990. "Neural Networks for Self-Learning Control Systems." IEEE Control Systems Magazine (Volume:10, Issue: 3). IEEE. 18-23
+
+[10] Decision Tree (Paper Referensi ITS)
+
+[11] Mohammed Zbakh, Zehira Haddad, Jaime Lopez Krahe. 2015. "An online reversed French Sign Language dictionary based on a learning approach for signs classification." Pattern Recognition Letters Volume 67 Issue P1. New York, USA: Elsevier Science Inc. 28-38.
+
+[1] R. Dijkman, M. Dumas, B. v. Dongen, R. K. ¨. a. ¨. arik dan J. Mendling, “Similarity of Business Process Models : Metrics and Evaluation,” Information System, pp. 498-516, 2011.
