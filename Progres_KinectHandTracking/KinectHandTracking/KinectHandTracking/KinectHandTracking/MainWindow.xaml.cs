@@ -103,7 +103,7 @@ namespace KinectHandTracking
             // Body
             using (var frame = reference.BodyFrameReference.AcquireFrame())
             {
-                if (frame != null)
+                    if (frame != null)
                 {
                     canvas.Children.Clear();
                     _bodies = new Body[frame.BodyFrameSource.BodyCount];
@@ -303,7 +303,7 @@ namespace KinectHandTracking
                                         var stringtangankiri = tanganKiri; var stringtangankanan = tanganKanan;
 
                                         #region Training / Testing
-                                        if (statusAmbil != 0)
+                                        if (statusAmbil == 1)
                                         { 
                                             var newLine = string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},{24},{25},{26},{27},{28},{29},{30},{31},{32},{33},{34},{35},{36},{37}",
                                             stringkuant4, stringkuant6, stringkuant8, stringkuant10, stringkuant12, stringkuant14, stringkuant16,
@@ -316,7 +316,7 @@ namespace KinectHandTracking
                                             //memasukkan ke dalam baris
                                             csv.AppendLine(newLine);
                                         }
-                                        else
+                                        else if (statusAmbil == 0)
                                         {
                                             int kondisi = 2;
                                             if (kondisi == 1)
@@ -624,12 +624,17 @@ namespace KinectHandTracking
 
         private void OneTestButton_Click(object sender, RoutedEventArgs e)
         {
-
+            statusAmbil = 2;
+            //OneTestButton.IsEnabled = true;
+            //tblRightHandState.Content = rightHandState;
+            //tblLeftHandState.Content = leftHandState;
+            //OneTestButton.IsEnabled = false;
         }
 
         private void createButton_click(object sender, RoutedEventArgs e)
         {
-
+            //createButton
+            statusAmbil = 1;
         }
     }
 }
