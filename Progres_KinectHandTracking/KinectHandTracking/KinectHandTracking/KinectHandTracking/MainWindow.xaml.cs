@@ -103,7 +103,7 @@ namespace KinectHandTracking
             // Body
             using (var frame = reference.BodyFrameReference.AcquireFrame())
             {
-                    if (frame != null)
+                if (frame != null)
                 {
                     canvas.Children.Clear();
                     _bodies = new Body[frame.BodyFrameSource.BodyCount];
@@ -113,18 +113,17 @@ namespace KinectHandTracking
                     var csv = new StringBuilder();
                     string filePath = "F:\\Eka\\ITS\\KULIAH\\SEMESTER 7\\TAkisgan\\Realtime\\DataSet Baru\\Percobaan.csv";
 
-
                     foreach (var body in _bodies)
                     {
                         if (body != null)
                         {
                             if (body.IsTracked)
                             {
-                                if (flag2 == 0)
-                                {
-                                    await Task.Delay(5000);
-                                    flag2 = 1;
-                                }
+                                //if (flag2 == 0)
+                                //{
+                                //    await Task.Delay(5000);
+                                //    flag2 = 1;
+                                //}
 
                                 #region Menggambar Interface Output Kinect
                                 // Identifikasi Tulang
@@ -602,6 +601,7 @@ namespace KinectHandTracking
                                                     }
                                                 }
                                                 #endregion
+                                                i = -1;
                                             }
                                         }
                                         #endregion
