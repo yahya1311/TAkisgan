@@ -65,7 +65,7 @@ namespace KinectHandTracking
             if (_sensor != null)
             {
                 _sensor.Open();
-
+                statusDetail.Content = "Idle";
                 _reader = _sensor.OpenMultiSourceFrameReader(FrameSourceTypes.Color | FrameSourceTypes.Depth | FrameSourceTypes.Infrared | FrameSourceTypes.Body);
                 _reader.MultiSourceFrameArrived += Reader_MultiSourceFrameArrived;
                 
@@ -112,6 +112,7 @@ namespace KinectHandTracking
                     // Deklarasi Variabel untuk Write Data
                     var csv = new StringBuilder();
                     string filePath = "F:\\Eka\\ITS\\KULIAH\\SEMESTER 7\\TAkisgan\\Realtime\\DataSet Baru\\Percobaan.csv";
+                    string imagePath = "F:\\Eka\\ITS\\KULIAH\\SEMESTER 7\\TAkisgan\\Realtime\\GambarIsyarat\\";
 
                     foreach (var body in _bodies)
                     {
@@ -211,7 +212,9 @@ namespace KinectHandTracking
                                 tmpa = a; tmpb = b;
                                 tmpx = x; tmpy = y;
 
-                                if (i < 40)
+                                // kondisi idle
+
+                                if (i < 40 && statusAmbil != 0)
                                 {
                                     #region Status Frame
                                     if (i < 38)
@@ -315,7 +318,7 @@ namespace KinectHandTracking
                                             //memasukkan ke dalam baris
                                             csv.AppendLine(newLine);
                                         }
-                                        else if (statusAmbil == 0)
+                                        else if (statusAmbil == 2)
                                         {
                                             int kondisi = 2;
                                             if (kondisi == 1)
@@ -567,9 +570,6 @@ namespace KinectHandTracking
                                                             }
                                                         }
                                                     }
-
-
-
                                                 }
                                                 else if (stringtangankiri == "Dada")
                                                 {
@@ -601,6 +601,14 @@ namespace KinectHandTracking
                                                     }
                                                 }
                                                 #endregion
+                                                string imageFullPath = imagePath + outputText.Content + ".bmp";
+                                                string imageFullPath2 = imagePath + outputText.Content + ".jpg";
+
+                                                if (File.Exists(imageFullPath))
+                                                    outputImage.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(imageFullPath);
+                                                if (File.Exists(imageFullPath2))
+                                                    outputImage.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(imageFullPath2);
+
                                                 i = -1;
                                             }
                                         }
@@ -613,7 +621,7 @@ namespace KinectHandTracking
                             }
                         }
                     }
-                    if (statusAmbil != 0)
+                    if (statusAmbil == 1)
                     {
                         File.AppendAllText(filePath, csv.ToString());
                     }
@@ -624,6 +632,7 @@ namespace KinectHandTracking
 
         private void OneTestButton_Click(object sender, RoutedEventArgs e)
         {
+            statusDetail.Content = "Testing Data";
             statusAmbil = 2;
             //OneTestButton.IsEnabled = true;
             //tblRightHandState.Content = rightHandState;
@@ -634,6 +643,7 @@ namespace KinectHandTracking
         private void createButton_click(object sender, RoutedEventArgs e)
         {
             //createButton
+            statusDetail.Content = "Create Dataset";
             statusAmbil = 1;
         }
     }

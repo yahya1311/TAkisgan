@@ -1,18 +1,22 @@
 ﻿<Window x:Class="KinectHandTracking.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Kinect 2 hand tracking" Height="800" Width="1200" Loaded="Window_Loaded" Closed="Window_Closed">
+        Title="Kinect 2 hand tracking" Height="710" Width="1200" Loaded="Window_Loaded" Closed="Window_Closed">
 
     <Grid Margin="0,0,2,0">
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="592,719,0,0" VerticalAlignment="Top" Width="563"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="171" Margin="976,321,0,0" VerticalAlignment="Top" Width="171"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="395,561,0,0" VerticalAlignment="Top" Width="563"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="171" Margin="976,365,0,0" VerticalAlignment="Top" Width="171"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="133" Margin="966,26,0,0" VerticalAlignment="Top" Width="189"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="65" Margin="966,186,0,0" VerticalAlignment="Top" Width="189"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="333" Margin="966,286,0,0" VerticalAlignment="Top" Width="189"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="72" Margin="973,532,0,0" VerticalAlignment="Top" Width="175"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="333" Margin="966,330,0,0" VerticalAlignment="Top" Width="189"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="72" Margin="973,576,0,0" VerticalAlignment="Top" Width="175"/>
 
-        <Image Name="camera" HorizontalAlignment="Left" Height="700" Margin="10,10,0,0" VerticalAlignment="Top" Width="940"/>
-        <Canvas Name="canvas" HorizontalAlignment="Left" Height="700" Margin="10,10,0,0" VerticalAlignment="Top" Width="940"/>
+        <Viewbox Width="940" Height="700" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid>
+                <Image Name="camera" Width="1920" Height="1080" />
+                <Canvas Name="canvas" Width="1920" Height="1080" ClipToBounds="True" />
+            </Grid>
+        </Viewbox>
 
         <Label Name="label3" Content="Testing Data" HorizontalAlignment="Left" Margin="969,186,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
         <Button Name="OneTestButton" Content="Start Testing" HorizontalAlignment="Left" Margin="975,222,0,0" VerticalAlignment="Top" Width="75" Click="OneTestButton_Click"/>
@@ -22,24 +26,24 @@
         <TextBox Name="fileName" HorizontalAlignment="Left" Height="28" Margin="979,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="16"/>
         <Button Name="createButton" Content="Create File" HorizontalAlignment="Left" Margin="979,131,0,0" VerticalAlignment="Top" Width="75" Click="createButton_click"/>
 
-        <Label Name="label7" Content="Output Image" HorizontalAlignment="Left" Margin="969,285,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
-        <Border HorizontalAlignment="Left" Height="171" Margin="976,322,0,0" VerticalAlignment="Top" Width="171" >
+        <Label Name="label7" Content="Output Image" HorizontalAlignment="Left" Margin="969,329,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
+        <Border HorizontalAlignment="Left" Height="171" Margin="976,366,0,0" VerticalAlignment="Top" Width="171" >
             <Image x:Name="outputImage" Stretch="UniformToFill" Margin="0,-3,0.2,2.2"/>
         </Border>
 
-        <Label Name="label8" Content="Output Text" HorizontalAlignment="Left" Margin="969,500,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
-        <Label Name="outputText" Content="" HorizontalAlignment="Left" Margin="973,541,0,0" VerticalAlignment="Top" Height="48" Width="174" FontSize="26.667" RenderTransformOrigin="0.981,2.1"/>
+        <Label Name="label8" Content="Output Text" HorizontalAlignment="Left" Margin="969,544,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
+        <Label Name="outputText" Content="" HorizontalAlignment="Left" Margin="973,585,0,0" VerticalAlignment="Top" Height="48" Width="174" FontSize="26.667" RenderTransformOrigin="0.981,2.1"/>
 
-        <Label Name="label9" Content="Status:" HorizontalAlignment="Left" Margin="40,715,0,0" VerticalAlignment="Top" Width="100" FontSize="24" Height="47"/>
-        <Label Name="statusDetail" Content="Kinect Not Connected" HorizontalAlignment="Left" Height="47" Margin="116,715,0,0" VerticalAlignment="Top" Width="341" FontSize="24"/>
+        <Label Name="label9" Content="Status:" HorizontalAlignment="Left" Margin="6,560,0,0" VerticalAlignment="Top" Width="100" FontSize="24" Height="47"/>
+        <Label Name="statusDetail" Content="Kinect Not Connected" HorizontalAlignment="Left" Height="47" Margin="82,560,0,0" VerticalAlignment="Top" Width="341" FontSize="24"/>
 
-        <Label Name="label10" Content="Left Hand:" HorizontalAlignment="Left" Margin="596,715,0,0" VerticalAlignment="Top" Width="119" FontSize="24" Height="47"/>
-        <Label Name="tblLeftHandState" Content="Not Detected" HorizontalAlignment="Left" Height="47" Margin="712,715,0,0" VerticalAlignment="Top" Width="187" FontSize="24"/>
+        <Label Name="label10" Content="Left Hand:" HorizontalAlignment="Left" Margin="399,559,0,0" VerticalAlignment="Top" Width="119" FontSize="24" Height="47"/>
+        <Label Name="tblLeftHandState" Content="Not Detected" HorizontalAlignment="Left" Height="47" Margin="515,559,0,0" VerticalAlignment="Top" Width="187" FontSize="24"/>
 
-        <Label Name="label11" Content="Right Hand:" HorizontalAlignment="Left" Margin="868,715,0,0" VerticalAlignment="Top" Width="144" FontSize="24" Height="47"/>
-        <Label Name="tblRightHandState" Content="Not Detected" HorizontalAlignment="Left" Height="47" Margin="1000,715,0,0" VerticalAlignment="Top" Width="187" FontSize="24"/>
+        <Label Name="label11" Content="Right Hand:" HorizontalAlignment="Left" Margin="671,559,0,0" VerticalAlignment="Top" Width="144" FontSize="24" Height="47"/>
+        <Label Name="tblRightHandState" Content="Not Detected" HorizontalAlignment="Left" Height="47" Margin="803,559,0,0" VerticalAlignment="Top" Width="187" FontSize="24"/>
 
-        <Label Name="label12" Content="Frame:" HorizontalAlignment="Left" Margin="986,645,0,0" VerticalAlignment="Top" Width="144" FontSize="24" Height="47"/>
-        <Label Name="ambilData" Content="Done" HorizontalAlignment="Left" Height="47" Margin="1064,645,-59.4,0" VerticalAlignment="Top" Width="187" FontSize="24"/>
+        <Label Name="label12" Content="Frame:" HorizontalAlignment="Left" Margin="984,268,0,0" VerticalAlignment="Top" Width="144" FontSize="24" Height="47"/>
+        <Label Name="ambilData" Content="Done" HorizontalAlignment="Left" Height="47" Margin="1062,268,-57.4,0" VerticalAlignment="Top" Width="187" FontSize="24"/>
     </Grid>
 </Window>
