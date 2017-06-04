@@ -9,6 +9,7 @@ KESIMPULAN
 2. Identifikasi posisi gerakan sangat berpengaruh terhadap hasil akurasi data
 3. Aplikasi yang dibangun pada tugas akhir ini dapat menerjemahkan bahasa isyarat pokok dengan akurasi rata-rata ... %
 4. Sedikit perbedaan gerakan isyarat yang dilakukan oleh pengguna di setiap data/frame, dapat mengakibatkan kesalahan keluaran bahasa isyarat
+5. Walaupun akurasi yang didapatkan sangat kecil, setelah skenario B dilakukan, penulis berkesimpulan bahwa fitur dinamis dapat mengklasifikasi bahasa isyarat statis. Kesalahan dalam mendeteksi bahasa isyarat statis pun timbul karena adanya sedikit gerakan yang tidak disengaja oleh penulis ketika perangkat lunak mengklasifikasikan gerakan. Hasil dari skenario pengujian B dapat dilihat pada Tabel 5.8.
 
 SARAN
 
