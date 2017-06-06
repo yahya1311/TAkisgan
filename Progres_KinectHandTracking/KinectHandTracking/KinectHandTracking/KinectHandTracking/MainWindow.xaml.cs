@@ -45,6 +45,7 @@ namespace KinectHandTracking
         private int i = 0;
         private int statusAmbil = 0;
         private string namaGerakan = "";
+        private int flag3 = 0;
 
         #endregion
 
@@ -158,11 +159,11 @@ namespace KinectHandTracking
                                     }
                                 }
 
-                                //if (flag2 == 0)
-                                //{
-                                //    await Task.Delay(3000);
-                                //    flag2 = 1;
-                                //}
+                                if (flag2 == 0)
+                                {
+                                    await Task.Delay(1000);
+                                    flag2 = 1;
+                                }
                                 
                                 #region Notif State
 
@@ -342,11 +343,11 @@ namespace KinectHandTracking
                                             //memasukkan ke dalam baris
                                             csv.AppendLine(newLine);
 
-                                            statusDetail.Content = "Data Created";
+                                            flag3++;
                                         }
                                         else if (statusAmbil == 2)
                                         {
-                                            int kondisi = 3;
+                                            int kondisi = 2;
                                             if (kondisi == 1)
                                             {
                                                 #region Data Sedikit
@@ -847,7 +848,16 @@ namespace KinectHandTracking
                                             if (File.Exists(imageFullPath2))
                                                 outputImage.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(imageFullPath2);
                                         }
-                                        i = -1;
+
+                                        if (flag3 <= 15)
+                                        {
+                                            i = -1;
+                                        }
+                                        else
+                                        {
+                                            statusDetail.Content = "Data Created";
+                                        }
+
                                         flag = 0;
                                         flag2 = 0;
                                         #endregion
@@ -872,7 +882,7 @@ namespace KinectHandTracking
         {
             statusDetail.Content = "Testing Data";
             statusAmbil = 2;
-            flag2 = 0;
+            //flag2 = 0;
         }
 
         private void createButton_click(object sender, RoutedEventArgs e)
@@ -880,6 +890,7 @@ namespace KinectHandTracking
             statusDetail.Content = "Create Dataset";
             statusAmbil = 1;
             flag2 = 0;
+            flag3 = 0;
 
             namaGerakan = fileName.Text;
         }
