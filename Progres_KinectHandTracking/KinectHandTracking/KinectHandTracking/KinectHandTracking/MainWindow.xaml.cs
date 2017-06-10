@@ -41,11 +41,10 @@ namespace KinectHandTracking
         private string tanganKanan = "", tanganKiri = "";
 
         //Penanda
-        private int flag = 0, flag2 = 1;
+        private int flag = 0, flag2 = 0, flag3 = 0;
         private int i = 0;
         private int statusAmbil = 0;
         private string namaGerakan = "";
-        private int flag3 = 0;
 
         #endregion
 
@@ -158,12 +157,6 @@ namespace KinectHandTracking
                                         canvas.Children.Add(ellipse);
                                     }
                                 }
-
-                                if (flag2 == 0)
-                                {
-                                    await Task.Delay(1000);
-                                    flag2 = 1;
-                                }
                                 
                                 #region Notif State
 
@@ -240,6 +233,12 @@ namespace KinectHandTracking
 
                                 if (i < 40 && statusAmbil != 0)
                                 {
+                                    if (flag2 == 0)
+                                    {
+                                        await Task.Delay(3000);
+                                        flag2 = 1;
+                                    }
+
                                     #region Status Frame
                                     if (i < 38)
                                     {
@@ -347,7 +346,7 @@ namespace KinectHandTracking
                                         }
                                         else if (statusAmbil == 2)
                                         {
-                                            int kondisi = 2;
+                                            int kondisi = 3;
                                             if (kondisi == 1)
                                             {
                                                 #region Data Sedikit
@@ -852,14 +851,13 @@ namespace KinectHandTracking
                                         if (flag3 <= 15)
                                         {
                                             i = -1;
+                                            flag2 = 0;
                                         }
                                         else
                                         {
                                             statusDetail.Content = "Data Created";
                                         }
-
                                         flag = 0;
-                                        flag2 = 0;
                                         #endregion
                                     }
                                     i++;
@@ -882,14 +880,13 @@ namespace KinectHandTracking
         {
             statusDetail.Content = "Testing Data";
             statusAmbil = 2;
-            //flag2 = 0;
+            flag3 = 0; 
         }
 
         private void createButton_click(object sender, RoutedEventArgs e)
         {
             statusDetail.Content = "Create Dataset";
             statusAmbil = 1;
-            flag2 = 0;
             flag3 = 0;
 
             namaGerakan = fileName.Text;
