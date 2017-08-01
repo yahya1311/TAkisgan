@@ -1,0 +1,16 @@
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\bin\Release\KinectHandTracking.exe.config
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\bin\Release\KinectHandTracking.exe
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\bin\Release\KinectHandTracking.pdb
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\bin\Release\Microsoft.Kinect.dll
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\bin\Release\Microsoft.Kinect.xml
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking.csprojResolveAssemblyReference.cache
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\MainWindow.baml
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\App.baml
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\MainWindow.g.cs
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\App.g.cs
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking_MarkupCompile.cache
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking.g.resources
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking.Properties.Resources.resources
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking.csproj.GenerateResource.Cache
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking.exe
+F:\Eka\ITS\KULIAH\SEMESTER 7\TAkisgan\Realtime\Progres_KinectHandTracking\KinectHandTracking\KinectHandTracking\KinectHandTracking\obj\Release\KinectHandTracking.pdb

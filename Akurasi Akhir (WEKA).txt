@@ -1,0 +1,31 @@
+J48
+##Cross-val 10: 92.6667%
+Cross-val 5: 84%
+Percentage Split 80: 83.333%
+
+MultilayerPerceptron
+Cross-val 10: 82%
+Cross-val 5: 86.6667%
+Percentage Split 80: 80%
+
+--TAMBAH DATA--
+J48
+##Cross-val 10: 78.8%
+Cross-val 5: 78.8%
+Percentage Split 80: 68.5%
+
+MultilayerPerceptron
+Cross-val 10: 78%
+Cross-val 5: 76.9%
+Percentage Split 80: 83.333%
+
+--GERAKAN AJAH
+J48
+Cross-val 10: 69.8%
+Cross-val 5: 74.3%
+Percentage Split 80: 59.3%
+
+MultilayerPerceptron
+Cross-val 10: 68.7%
+Cross-val 5: 71.3%
+Percentage Split 80: 59.3%
