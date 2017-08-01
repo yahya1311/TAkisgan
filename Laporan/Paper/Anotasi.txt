@@ -1,1 +1,0 @@
-Bahasa isyarat diklasifikasikan dalam dua kategori, yaitu bahasa isyarat statis dan dinamis. Pada penelitian ini dilakukan pengenalan bahasa isyarat dinamis dengan menggunakan fitur dinamis, yaitu fitur yang dapat mengklasifikasikan bahasa isyarat dinamis dengan mendeteksi dan mengekstraksi gerakan tangan yang dilakukan oleh pengguna.
